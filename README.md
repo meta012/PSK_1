@@ -1,4 +1,4 @@
-# PSK1Laboratorinis
+# PSK 1 laboratorinis darbas
 
 ## Application Server configuration
 
