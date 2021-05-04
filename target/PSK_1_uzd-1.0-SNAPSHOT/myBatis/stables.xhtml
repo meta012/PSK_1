@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+>
+<h:head/>
+<h:body>
+    <h2>Stables:</h2>
+    <ul>
+        <ui:repeat value="#{stablesMyBatis.allStables}" var="stable">
+            <li><h:link value="#{stable.id} : #{stable.name}" outcome="stableDetails?stableId=#{stable.id}" /></li>
+        </ui:repeat>
+    </ul>
+
+    <h:form>
+        <h:inputText a:placeholder="name" value="#{stablesMyBatis.stableToCreate.name}" required="true" />
+        <h:inputText a:placeholder="address" value="#{stablesMyBatis.stableToCreate.address}" required="true" />
+        <h:commandButton value="Add new stable" action="#{stablesMyBatis.createStable}" />
+    </h:form>
+
+    <h:link outcome="/index" value="Back to Index"/>
+</h:body>
+
+</html>
