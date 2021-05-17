@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="StablesDB" uuid="b6b238c9-7a8d-46da-a894-be446010bf40">
+    <data-source source="LOCAL" name="StablesDB" uuid="63cc6e59-a7e4-4977-89c5-d357ce7f4bd1">
       <driver-ref>h2.unified</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.h2.Driver</jdbc-driver>
-      <jdbc-url>jdbc:h2:~/h2database/StablesDB</jdbc-url>
+      <jdbc-url>jdbc:h2:~/h2database/StablesDB;AUTO_SERVER=TRUE</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

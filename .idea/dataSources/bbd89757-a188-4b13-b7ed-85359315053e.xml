@@ -176,20 +176,20 @@
     <collation id="161" parent="2" name="UKRAINIAN_UKRAINE"/>
     <collation id="162" parent="2" name="VIETNAMESE"/>
     <collation id="163" parent="2" name="VIETNAMESE_VIETNAM"/>
-    <sequence id="164" parent="4" name="SYSTEM_SEQUENCE_643D7649_9EF8_444C_9DFA_B239B898C276">
+    <sequence id="164" parent="4" name="SYSTEM_SEQUENCE_94670903_C062_4DDB_A87F_4020D40FA187">
+      <ObjectId>18</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <SequenceIdentity>null(1)</SequenceIdentity>
+      <AutoCreated>1</AutoCreated>
+    </sequence>
+    <sequence id="165" parent="4" name="SYSTEM_SEQUENCE_9760621B_F712_4112_8458_F7492CE9D667">
       <ObjectId>10</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <SequenceIdentity>null(2)</SequenceIdentity>
+      <SequenceIdentity>null(1)</SequenceIdentity>
       <AutoCreated>1</AutoCreated>
     </sequence>
-    <sequence id="165" parent="4" name="SYSTEM_SEQUENCE_76D22C8A_4A3A_4649_8450_3151B2A14463">
+    <sequence id="166" parent="4" name="SYSTEM_SEQUENCE_B896283B_B5C1_4D71_AB6A_7770081F5719">
       <ObjectId>4</ObjectId>
-      <NameSurrogate>1</NameSurrogate>
-      <SequenceIdentity>null(3)</SequenceIdentity>
-      <AutoCreated>1</AutoCreated>
-    </sequence>
-    <sequence id="166" parent="4" name="SYSTEM_SEQUENCE_9966B573_2148_475C_875C_F094F9168B05">
-      <ObjectId>18</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SequenceIdentity>null(2)</SequenceIdentity>
       <AutoCreated>1</AutoCreated>
@@ -210,7 +210,7 @@
       <Position>1</Position>
       <DataType>BIGINT|0s</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>null(2)</SequenceIdentity>
+      <SequenceIdentity>null(1)</SequenceIdentity>
     </column>
     <column id="172" parent="167" name="PERSONAL_ID_NO">
       <Position>2</Position>
@@ -249,7 +249,7 @@
       <Position>1</Position>
       <DataType>BIGINT|0s</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>null(2)</SequenceIdentity>
+      <SequenceIdentity>null(1)</SequenceIdentity>
     </column>
     <column id="179" parent="168" name="IDENTITY_NO">
       <Position>2</Position>
@@ -312,7 +312,7 @@
       <Position>1</Position>
       <DataType>BIGINT|0s</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>null(3)</SequenceIdentity>
+      <SequenceIdentity>null(2)</SequenceIdentity>
     </column>
     <column id="190" parent="169" name="ADDRESS">
       <Position>2</Position>

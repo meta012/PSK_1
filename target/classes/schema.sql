@@ -32,6 +32,8 @@ create table Stable_coach (
     foreign key (coach_id) references Coach(id)
 );
 
+insert into STABLE(address, name) values ('Kuosu 20', 'Klaipedos zirgynas');
+
 
 select *
 from public.Stable_coach;

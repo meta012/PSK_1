@@ -13,6 +13,11 @@ public class HorsesDAO {
     @Inject
     private EntityManager em;
 
+    public List<Horse> loadAll() {
+
+        return em.createNamedQuery("Horse.findAll", Horse.class).getResultList();
+    }
+
     public void persist(Horse horse){
 
         this.em.persist(horse);

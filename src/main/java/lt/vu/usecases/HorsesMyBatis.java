@@ -12,6 +12,7 @@ import javax.enterprise.inject.Model;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -44,20 +45,20 @@ public class HorsesMyBatis {
     public String createHorse(){
         horseToCreate.setStableId(this.stable.getId());
         horseMapper.insert(horseToCreate);
-        System.out.println("stableDetails?faces-redirect=true&stableId="+this.stable.getId());
-        return "stableDetails?faces-redirect=true&stableId="+this.stable.getId();
+        System.out.println("horses?faces-redirect=true&stableId="+this.stable.getId());
+        return "horses?faces-redirect=true&stableId="+this.stable.getId();
     }
 
     @Getter
     private List<Horse> allHorses;
 
     private void loadAllHorses(){
-        this.allHorses = horseMapper.selectAll();
-
-        if (allHorses.size() != 0) {
-            for (Horse horse : allHorses) {
-                if (horse.getStableId() != stable.getId()) {
-                    this.allHorses.remove(horse);
+        this.allHorses = new ArrayList<>();
+        if (horseMapper.selectAll().size() != 0) {
+            for (Horse horse : horseMapper.selectAll()) {
+                if (horse.getStableId() == stable.getId()) {
+                    System.out.println(horse.getName());
+                    this.allHorses.add(horse);
                 }
             }
         }

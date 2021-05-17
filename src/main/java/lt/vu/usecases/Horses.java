@@ -13,6 +13,8 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 @Model
@@ -44,5 +46,17 @@ public class Horses implements Serializable {
         horsesDAO.persist(horseToCreate);
         System.out.println("stableDetails?faces-redirect=true&stableId="+this.stable.getId());
         return "stableDetails?faces-redirect=true&stableId="+this.stable.getId();
+    }
+
+    @Getter
+    private List<Horse> allHorses;
+
+    private void loadAllHorses(){
+        this.allHorses = horsesDAO.loadAll();
+    }
+
+    public Integer getHorseCount(){
+        loadAllHorses();
+        return this.allHorses.size();
     }
 }
