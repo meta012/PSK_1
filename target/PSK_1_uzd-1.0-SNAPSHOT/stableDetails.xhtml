@@ -4,8 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://java.sun.com/jsf/core">
 <h:head/>
 <h:body>
     <h2>Stable: #{horses.stable.name}</h2>
@@ -22,20 +22,21 @@
             <f:param name="stableId" value="#{horses.stable.id}" />
         </h:commandButton>
     </h:form>
-    <h3>Teachers:</h3>
+
+    <h3>Coaches:</h3>
     <ol>
-        <ui:repeat value="#{teachersSchools.school.teachers}" var="teacher">
-            <li><h:link value="#{teacher.name}" outcome="teacher?teacherId=#{teacher.id}"/></li>
+        <ui:repeat value="#{coaches.stable.coaches}" var="coach">
+            <li><h:link value="#{coach.name}" outcome="coachDetails?coachId=#{coach.id}"/></li>
         </ui:repeat>
     </ol>
     <h:form>
-        <h:inputText a:placeholder="name" value="#{teachersSchools.teacherToCreate.name}" required="true"/>
-        <h:inputText a:placeholder="surname" value="#{teachersSchools.teacherToCreate.surname}" required="true"/>
-        <h:inputText a:placeholder="address" value="#{teachersSchools.teacherToCreate.address}" required="true"/>
-        <h:commandButton value="Add teacher" action="#{teachersSchools.createTeacher}" >
-            <f:param name="schoolId" value="#{teachersSchools.school.id}" />
+        <h:inputText a:placeholder="name" value="#{coaches.coachToCreate.name}" required="true"/>
+        <h:inputText a:placeholder="personal_id_no" value="#{coaches.coachToCreate.personalIdNo}" required="true"/>
+        <h:commandButton value="Add coach" action="#{coaches.createCoach}" >
+            <f:param name="stableId" value="#{coaches.stable.id}" />
         </h:commandButton>
     </h:form>
-    <h:link outcome="index" value="Back to index"/>
+
+    <h:link outcome="index" value="Back to main page"/>
 </h:body>
 </html>

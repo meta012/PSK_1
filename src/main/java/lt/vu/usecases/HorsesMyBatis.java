@@ -2,26 +2,26 @@ package lt.vu.usecases;
 
 import lombok.Getter;
 import lombok.Setter;
-import lt.vu.entities.Horse;
-import lt.vu.entities.Stable;
-import lt.vu.persistence.HorsesDAO;
-import lt.vu.persistence.StablesDAO;
+import lt.vu.mybatis.dao.HorseMapper;
+import lt.vu.mybatis.dao.StableMapper;
+import lt.vu.mybatis.model.Horse;
+import lt.vu.mybatis.model.Stable;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
-import java.io.Serializable;
+import java.util.List;
 import java.util.Map;
 
 @Model
-public class Horses implements Serializable {
+public class HorsesMyBatis {
     @Inject
-    private HorsesDAO horsesDAO;
+    private HorseMapper horseMapper;
 
     @Inject
-    private StablesDAO stablesDAO;
+    private StableMapper stableMapper;
 
     @Getter @Setter
     private Stable stable;
@@ -35,14 +35,31 @@ public class Horses implements Serializable {
                 FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
         Long stableId = Long.parseLong(requestParameters.get("stableId"));
         System.out.println("STABLE ID: " + stableId);
-        this.stable = stablesDAO.findOne(stableId);
+        this.stable = stableMapper.selectByPrimaryKey(stableId);
+
+        loadAllHorses();
     }
 
     @Transactional
     public String createHorse(){
-        horseToCreate.setStable(this.stable);
-        horsesDAO.persist(horseToCreate);
+        horseToCreate.setStableId(this.stable.getId());
+        horseMapper.insert(horseToCreate);
         System.out.println("stableDetails?faces-redirect=true&stableId="+this.stable.getId());
         return "stableDetails?faces-redirect=true&stableId="+this.stable.getId();
+    }
+
+    @Getter
+    private List<Horse> allHorses;
+
+    private void loadAllHorses(){
+        this.allHorses = horseMapper.selectAll();
+
+        if (allHorses.size() != 0) {
+            for (Horse horse : allHorses) {
+                if (horse.getStableId() != stable.getId()) {
+                    this.allHorses.remove(horse);
+                }
+            }
+        }
     }
 }

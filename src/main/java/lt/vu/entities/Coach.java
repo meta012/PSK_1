@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.Objects;
 
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public class Coach {
     private Long id;
 
     @Column(name = "PERSONAL_ID_NO")
-    private int personalIdNo;
+    private Integer personalIdNo;
 
     @Column(name = "NAME")
     private String name;

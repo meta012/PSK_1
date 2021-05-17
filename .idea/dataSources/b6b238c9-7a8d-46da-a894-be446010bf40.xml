@@ -176,22 +176,22 @@
     <collation id="161" parent="2" name="UKRAINIAN_UKRAINE"/>
     <collation id="162" parent="2" name="VIETNAMESE"/>
     <collation id="163" parent="2" name="VIETNAMESE_VIETNAM"/>
-    <sequence id="164" parent="4" name="SYSTEM_SEQUENCE_2950F2DE_AAF1_4799_9653_1D5AB261290C">
+    <sequence id="164" parent="4" name="SYSTEM_SEQUENCE_C1E1D20C_1970_44D3_A508_C4FA64FB63A4">
       <ObjectId>18</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SequenceIdentity>null(2)</SequenceIdentity>
       <AutoCreated>1</AutoCreated>
     </sequence>
-    <sequence id="165" parent="4" name="SYSTEM_SEQUENCE_2C4CFCD0_F253_40EA_A192_96AE1EE6B484">
-      <ObjectId>4</ObjectId>
-      <NameSurrogate>1</NameSurrogate>
-      <SequenceIdentity>null(3)</SequenceIdentity>
-      <AutoCreated>1</AutoCreated>
-    </sequence>
-    <sequence id="166" parent="4" name="SYSTEM_SEQUENCE_BC3CED53_2B74_41D6_B362_B5318F4A12E2">
+    <sequence id="165" parent="4" name="SYSTEM_SEQUENCE_CACE4441_3137_4261_8B7F_F0960D59B86F">
       <ObjectId>10</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SequenceIdentity>null(2)</SequenceIdentity>
+      <AutoCreated>1</AutoCreated>
+    </sequence>
+    <sequence id="166" parent="4" name="SYSTEM_SEQUENCE_E78A3E9A_4525_4922_985B_A11EA8FB8FFC">
+      <ObjectId>4</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <SequenceIdentity>null(3)</SequenceIdentity>
       <AutoCreated>1</AutoCreated>
     </sequence>
     <table id="167" parent="4" name="COACH">

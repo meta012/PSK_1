@@ -19,7 +19,7 @@ public class Horse {
     @Id
     @GeneratedValue
     @Column(name = "ID")
-    private Integer id;
+    private Long id;
 
     @Column(name = "IDENTITY_NO")
     private Integer identityNo;

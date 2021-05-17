@@ -21,7 +21,7 @@ public class Stable {
     @Id
     @GeneratedValue
     @Column(name = "ID")
-    private Integer id;
+    private Long id;
 
     @Column(name = "ADDRESS")
     private String address;
@@ -41,11 +41,11 @@ public class Stable {
         if(o == null || getClass() != o.getClass()) return false;
         Stable stable = (Stable) o;
         return Objects.equals(id, stable.id) &&
-                Objects.equals(address, stable.address);
+                Objects.equals(name, stable.name);
     }
 
     @Override
     public int hashCode(){
-        return Objects.hash(id, address);
+        return Objects.hash(id, name);
     }
 }

@@ -8,6 +8,7 @@ import lt.vu.entities.Stable;
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
 import javax.inject.Inject;
+import javax.persistence.criteria.CriteriaBuilder;
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -32,6 +33,10 @@ public class Stables {
     public String createStable(){
         this.stablesDAO.persist(stableToCreate);
         return "index?faces-redirect=true";
+    }
+
+    public Integer countStables() {
+        return allStables.size();
     }
 
     private void loadAllStables(){

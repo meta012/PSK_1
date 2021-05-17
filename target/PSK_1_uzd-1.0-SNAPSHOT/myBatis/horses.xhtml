@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head/>
+<h:body>
+    <h2>Stable: #{horsesMyBatis.stable.name}</h2>
+    <h3>Horses:</h3>
+    <ol>
+        <ui:repeat value="#{horsesMyBatis.allHorses}" var="horse">
+            <li>#{horse.name}</li>
+        </ui:repeat>
+    </ol>
+    <h:form>
+        <h:inputText a:placeholder="name" value="#{horsesMyBatis.horseToCreate.name}" required="true"/>
+        <h:inputText a:placeholder="identity_no" value="#{horsesMyBatis.horseToCreate.identityNo}" required="true"/>
+        <h:commandButton value="Add horse" action="#{horsesMyBatis.createHorse}" >
+            <f:param name="stableId" value="#{horsesMyBatis.stable.id}" />
+        </h:commandButton>
+    </h:form>
+    <h:link outcome="/myBatis/stables" value="Back to my batis stables"/>
+</h:body>
+</html>

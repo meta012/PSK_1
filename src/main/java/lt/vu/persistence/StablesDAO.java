@@ -22,7 +22,7 @@ public class StablesDAO {
         this.em.persist(stable);
     }
 
-    public Stable findOne(Integer id){
+    public Stable findOne(Long id){
 
         return em.find(Stable.class, id);
     }
