@@ -4,16 +4,17 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:f="http://java.sun.com/jsf/core"
 >
 <h:head/>
 <h:body>
     <h2>Stables:</h2>
     <ul>
         <ui:repeat value="#{stables.allStables}" var="stable">
-            <li><h:link value="#{stable.name}" outcome="stableDetails?stableId=#{stable.id}" /></li>
+            <li><h:link value="#{stable.name}" outcome="stableDetails?stableId=#{stable.id}"/>
+                <h:outputText style="color: red" value="#{stable.coaches.size() == 0 ? '*' : ''}"/></li>
         </ui:repeat>
     </ul>
+
 
     <h:form>
         <h:inputText a:placeholder="name" value="#{stables.stableToCreate.name}" required="true" />
@@ -21,7 +22,7 @@
         <h:commandButton value="Add new stable" action="#{stables.createStable}" />
     </h:form>
 
-    <!--#{stables.countStables()}-->
+    <!--<h2>Total number of stables: <h:outputText value="#{stables.countStables()}"/></h2>-->
 
     <h:link outcome="myBatis/stables" value="MyBatis implementation"/>
 </h:body>

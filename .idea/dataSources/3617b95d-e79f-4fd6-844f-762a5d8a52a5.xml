@@ -176,22 +176,22 @@
     <collation id="161" parent="2" name="UKRAINIAN_UKRAINE"/>
     <collation id="162" parent="2" name="VIETNAMESE"/>
     <collation id="163" parent="2" name="VIETNAMESE_VIETNAM"/>
-    <sequence id="164" parent="4" name="SYSTEM_SEQUENCE_F1912B38_AF49_44C5_89C2_459CD3B16089">
-      <ObjectId>18</ObjectId>
+    <sequence id="164" parent="4" name="SYSTEM_SEQUENCE_020C6B4D_BF1E_47FD_A018_A1D8890FFD3B">
+      <ObjectId>4</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <SequenceIdentity>null(1)</SequenceIdentity>
+      <SequenceIdentity>null(2)</SequenceIdentity>
       <AutoCreated>1</AutoCreated>
     </sequence>
-    <sequence id="165" parent="4" name="SYSTEM_SEQUENCE_FE11840E_79B9_4BEB_B056_FE70CF241AB5">
+    <sequence id="165" parent="4" name="SYSTEM_SEQUENCE_129D6592_D896_4BF3_9072_C70EEF919173">
       <ObjectId>10</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SequenceIdentity>null(1)</SequenceIdentity>
       <AutoCreated>1</AutoCreated>
     </sequence>
-    <sequence id="166" parent="4" name="SYSTEM_SEQUENCE_FED63353_EFD8_4D9F_A3EA_AF7AAA0BFC8B">
-      <ObjectId>4</ObjectId>
+    <sequence id="166" parent="4" name="SYSTEM_SEQUENCE_7FF7B5F9_187D_4F02_9EC2_844E423D53AB">
+      <ObjectId>18</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <SequenceIdentity>null(2)</SequenceIdentity>
+      <SequenceIdentity>null(1)</SequenceIdentity>
       <AutoCreated>1</AutoCreated>
     </sequence>
     <table id="167" parent="4" name="COACH">
@@ -259,15 +259,11 @@
       <Position>3</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="181" parent="168" name="OPT_LOCK_VERSION">
+    <column id="181" parent="168" name="STABLE_ID">
       <Position>4</Position>
       <DataType>INT|0s</DataType>
     </column>
-    <column id="182" parent="168" name="STABLE_ID">
-      <Position>5</Position>
-      <DataType>INT|0s</DataType>
-    </column>
-    <index id="183" parent="168" name="PRIMARY_KEY_4">
+    <index id="182" parent="168" name="PRIMARY_KEY_4">
       <ObjectId>11</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SourceTextLength>69</SourceTextLength>
@@ -275,7 +271,7 @@
       <Unique>1</Unique>
       <AutoCreated>1</AutoCreated>
     </index>
-    <index id="184" parent="168" name="CONSTRAINT_INDEX_4">
+    <index id="183" parent="168" name="CONSTRAINT_INDEX_4">
       <ObjectId>13</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SourceTextLength>84</SourceTextLength>
@@ -283,23 +279,23 @@
       <Unique>1</Unique>
       <AutoCreated>1</AutoCreated>
     </index>
-    <index id="185" parent="168" name="CONSTRAINT_INDEX_41">
+    <index id="184" parent="168" name="CONSTRAINT_INDEX_41">
       <ObjectId>15</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SourceTextLength>76</SourceTextLength>
       <ColNames>STABLE_ID</ColNames>
       <AutoCreated>1</AutoCreated>
     </index>
-    <key id="186" parent="168" name="CONSTRAINT_4">
+    <key id="185" parent="168" name="CONSTRAINT_4">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="187" parent="168" name="CONSTRAINT_41">
+    <key id="186" parent="168" name="CONSTRAINT_41">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>IDENTITY_NO</ColNames>
     </key>
-    <foreign-key id="188" parent="168" name="CONSTRAINT_41B">
+    <foreign-key id="187" parent="168" name="CONSTRAINT_41B">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>STABLE_ID</ColNames>
       <RefTableName>STABLE</RefTableName>
@@ -308,19 +304,23 @@
       <OnDelete>restrict</OnDelete>
       <OnUpdate>restrict</OnUpdate>
     </foreign-key>
-    <column id="189" parent="169" name="ID">
+    <column id="188" parent="169" name="ID">
       <Position>1</Position>
       <DataType>BIGINT|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null(2)</SequenceIdentity>
     </column>
-    <column id="190" parent="169" name="ADDRESS">
+    <column id="189" parent="169" name="ADDRESS">
       <Position>2</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="191" parent="169" name="NAME">
+    <column id="190" parent="169" name="NAME">
       <Position>3</Position>
       <DataType>VARCHAR(255)|0s</DataType>
+    </column>
+    <column id="191" parent="169" name="OPT_LOCK_VERSION">
+      <Position>4</Position>
+      <DataType>INT|0s</DataType>
     </column>
     <index id="192" parent="169" name="PRIMARY_KEY_9">
       <ObjectId>5</ObjectId>

@@ -4,11 +4,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:a="http://java.sun.com/jsf/composite">
 <h:head/>
 <h:body>
     <h2>#{coachDetails.coach.name} #{coachDetails.coach.personalIdNo}</h2>
-    <h3>Schools:</h3>
+
+    <h:form>
+        <h:outputText value="Change coach name: "/>
+        <h:inputText a:placeholder="New name" value="#{updateCoachDetails.coach.name}" required="true" />
+        <h:commandButton value="Update" action="#{updateCoachDetails.updateCoach}">
+            <f:param name="coachId" value="#{updateCoachDetails.coach.id}" />
+        </h:commandButton>
+        <h:outputText value="Value was already modified by other user. If you want to override it - try again" rendered="#{param['error'] == 'optimistic-lock-exception'}" />
+    </h:form>
+
+    <h3>Stables:</h3>
     <ol>
         <ui:repeat value="#{coachDetails.coach.stables}" var="stable">
             <li>#{stable.name}</li>
@@ -22,6 +32,16 @@
             <f:param name="coachId" value="#{coachDetails.coach.id}"/>
         </h:commandButton>
     </h:form>
+
+    <h:form>
+        <h:outputText value="#{generateCoachNumber.generationStatus}"/>
+        <h:commandButton value="Would you like to generate coach work number?"
+                         disabled="#{generateCoachNumber.generationRunning}"
+                         action="#{generateCoachNumber.generateNewCoachNumber()}">
+            <f:param name="coachId" value="#{updateCoachDetails.coach.id}"/>
+        </h:commandButton>
+    </h:form>
+
     <h:link outcome="index" value="Back to main page"/>
 </h:body>
 </html>

@@ -2,6 +2,7 @@ package lt.vu.usecases;
 
 import lombok.Getter;
 import lombok.Setter;
+import lt.vu.interceptors.LoggedInvocation;
 import lt.vu.persistence.StablesDAO;
 import lt.vu.entities.Stable;
 
@@ -30,6 +31,7 @@ public class Stables {
     }
 
     @Transactional
+    @LoggedInvocation
     public String createStable(){
         this.stablesDAO.persist(stableToCreate);
         return "index?faces-redirect=true";

@@ -1,6 +1,8 @@
 package lt.vu.persistence;
 
 import lt.vu.entities.Stable;
+import lt.vu.persistence.interfaces.ICoachesDAO;
+
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -27,7 +29,5 @@ public class StablesDAO {
         return em.find(Stable.class, id);
     }
 
-    public Stable update(Stable stable){
-        return em.merge(stable);
-    }
+    public Stable update(Stable stable){ return em.merge(stable);}
 }

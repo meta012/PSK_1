@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.Objects;
 
 @Entity
@@ -17,7 +16,7 @@ public class Horse {
     public Horse(){ }
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long id;
 
@@ -26,10 +25,6 @@ public class Horse {
 
     @Column(name = "NAME")
     private String name;
-
-    @Version
-    @Column(name = "OPT_LOCK_VERSION")
-    private Integer version;
 
     @ManyToOne
     private Stable stable;

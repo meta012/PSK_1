@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.Objects;
 
 import java.util.ArrayList;
@@ -20,7 +19,7 @@ public class Coach {
     public Coach(){ }
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long id;
 
@@ -32,6 +31,12 @@ public class Coach {
 
     @ManyToMany
     private List<Stable> stables =  new ArrayList<>();
+
+    private Integer coachWorkNumber;
+
+    @Version
+    @Column(name = "OPT_LOCK_VERSION")
+    private Integer version;
 
     @Override
     public boolean equals(Object o) {
