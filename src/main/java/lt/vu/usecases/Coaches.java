@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 import lt.vu.entities.Coach;
 import lt.vu.entities.Stable;
-import lt.vu.mybatis.model.Horse;
 import lt.vu.persistence.CoachesDAO;
 import lt.vu.persistence.StablesDAO;
 

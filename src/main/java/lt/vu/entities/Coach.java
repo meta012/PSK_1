@@ -32,6 +32,7 @@ public class Coach {
     @ManyToMany
     private List<Stable> stables =  new ArrayList<>();
 
+    @Column(name = "COACH_WORK_NUMBER")
     private Integer coachWorkNumber;
 
     @Version

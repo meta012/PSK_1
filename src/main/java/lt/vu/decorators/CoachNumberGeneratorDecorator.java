@@ -18,7 +18,7 @@ public abstract class CoachNumberGeneratorDecorator implements ICoachNumberGener
     public Integer generateCoachNumber() {
         try {
             Integer generatedCoachNumber = coachNumberGenerator.generateCoachNumber();
-            Thread.sleep(5000);
+            Thread.sleep(3000);
             System.out.println("DECORATOR TASK DONE");
             return generatedCoachNumber + 1000;
         } catch (InterruptedException e) {

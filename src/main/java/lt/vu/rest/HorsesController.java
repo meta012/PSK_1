@@ -2,10 +2,10 @@ package lt.vu.rest;
 
 import lombok.Getter;
 import lombok.Setter;
-import lt.vu.entities.Coach;
-import lt.vu.persistence.CoachesDAO;
-import lt.vu.rest.contracts.CoachDto;
-import lt.vu.rest.contracts.CoachStableDto;
+import lt.vu.entities.Horse;
+import lt.vu.persistence.HorsesDAO;
+import lt.vu.rest.contracts.HorseDto;
+import lt.vu.rest.contracts.HorseStableDto;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -18,11 +18,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @ApplicationScoped
-@Path("/coachDetails")
-public class CoachesController {
+@Path("/horseDetails")
+public class HorsesController {
     @Inject
     @Setter @Getter
-    private CoachesDAO coachesDAO;
+    private HorsesDAO horsesDAO;
 
     @GET
     public String sayHello() {
@@ -33,27 +33,27 @@ public class CoachesController {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAll() {
-        List<Coach> coaches = coachesDAO.loadAll();
-        if (coaches.isEmpty()) {
+        List<Horse> horses = horsesDAO.loadAll();
+        if (horses.isEmpty()) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
-        List<CoachDto> coachDtos = coaches.stream()
-                .map(CoachDto::convertToCoachDto)
+        List<HorseDto> horseDtos = horses.stream()
+                .map(HorseDto::convertToHorseDto)
                 .collect(Collectors.toList());
 
-        return Response.ok(coachDtos).build();
+        return Response.ok(horseDtos).build();
     }
 
     @Path("/get{id}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getById(@PathParam("id") final Long id) {
-        Coach coach = coachesDAO.findOne(id);
-        if (coach == null) {
+        Horse horse = horsesDAO.findOne(id);
+        if (horse == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
-        CoachDto coachDto = CoachDto.convertToCoachDto(coach);
-        return Response.ok(coachDto).build();
+        HorseDto horseDto = HorseDto.convertToHorseDto(horse);
+        return Response.ok(horseDto).build();
     }
 
     @Path("/post")
@@ -61,12 +61,12 @@ public class CoachesController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Transactional
-    public Response create(CoachStableDto coachStableDto) {
-        Coach coach = new Coach();
-        coach.setName(coachStableDto.getName());
-        coach.setPersonalIdNo(coachStableDto.getPersonalIdNo());
-        coach.setStables(coachStableDto.getStables());
-        coachesDAO.persist(coach);
+    public Response create(HorseStableDto horseStableDto) {
+        Horse horse = new Horse();
+        horse.setName(horseStableDto.getName());
+        horse.setIdentityNo(horseStableDto.getIdentityNo());
+        horse.setStable(horseStableDto.getStable());
+        horsesDAO.persist(horse);
         return Response.ok(Response.Status.OK).build();
     }
 
@@ -75,12 +75,12 @@ public class CoachesController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Transactional
-    public Response update(@PathParam("id") final Long id, CoachDto coachDto) {
+    public Response update(@PathParam("id") final Long id, HorseDto horseDto) {
         try {
-            Coach coach = coachesDAO.findOne(id);
-            coach.setName(coachDto.getName());
-            coachesDAO.update(coach);
-            return Response.ok(CoachDto.convertToCoachDto(coach)).build();
+            Horse horse = horsesDAO.findOne(id);
+            horse.setName(horseDto.getName());
+            horsesDAO.update(horse);
+            return Response.ok(HorseDto.convertToHorseDto(horse)).build();
         } catch (OptimisticLockException e) {
             return Response.status(Response.Status.CONFLICT).build();
         }

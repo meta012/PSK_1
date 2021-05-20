@@ -12,4 +12,7 @@
     <decorators>
         <class>lt.vu.decorators.CoachNumberGeneratorDecorator</class>
     </decorators>
+    <alternatives>
+        <class>lt.vu.persistence.LowRiskCoachesDAO</class>
+    </alternatives>
 </beans>

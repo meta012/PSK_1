@@ -176,271 +176,168 @@
     <collation id="161" parent="2" name="UKRAINIAN_UKRAINE"/>
     <collation id="162" parent="2" name="VIETNAMESE"/>
     <collation id="163" parent="2" name="VIETNAMESE_VIETNAM"/>
-    <sequence id="164" parent="4" name="SYSTEM_SEQUENCE_020C6B4D_BF1E_47FD_A018_A1D8890FFD3B">
+    <sequence id="164" parent="4" name="SYSTEM_SEQUENCE_467711FD_F935_428E_91D3_95D612378AAB">
+      <ObjectId>9</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <SequenceIdentity>null(1)</SequenceIdentity>
+      <AutoCreated>1</AutoCreated>
+    </sequence>
+    <sequence id="165" parent="4" name="SYSTEM_SEQUENCE_76685646_B298_4721_80EA_36B60BB84AB6">
+      <ObjectId>13</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <SequenceIdentity>null(4)</SequenceIdentity>
+      <AutoCreated>1</AutoCreated>
+    </sequence>
+    <sequence id="166" parent="4" name="SYSTEM_SEQUENCE_8049F38F_EDE0_4BDE_B411_2C79D171FADB">
       <ObjectId>4</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <SequenceIdentity>null(6)</SequenceIdentity>
-      <AutoCreated>1</AutoCreated>
-    </sequence>
-    <sequence id="165" parent="4" name="SYSTEM_SEQUENCE_129D6592_D896_4BF3_9072_C70EEF919173">
-      <ObjectId>10</ObjectId>
-      <NameSurrogate>1</NameSurrogate>
-      <SequenceIdentity>null(5)</SequenceIdentity>
-      <AutoCreated>1</AutoCreated>
-    </sequence>
-    <sequence id="166" parent="4" name="SYSTEM_SEQUENCE_7FF7B5F9_187D_4F02_9EC2_844E423D53AB">
-      <ObjectId>18</ObjectId>
-      <NameSurrogate>1</NameSurrogate>
-      <SequenceIdentity>null(11)</SequenceIdentity>
+      <SequenceIdentity>null(3)</SequenceIdentity>
       <AutoCreated>1</AutoCreated>
     </sequence>
     <table id="167" parent="4" name="COACH">
-      <ObjectId>17</ObjectId>
-    </table>
-    <table id="168" parent="4" name="COACH_STABLE">
-      <ObjectId>30</ObjectId>
-    </table>
-    <table id="169" parent="4" name="HORSE">
-      <ObjectId>9</ObjectId>
-    </table>
-    <table id="170" parent="4" name="STABLE">
       <ObjectId>3</ObjectId>
     </table>
-    <table id="171" parent="4" name="STABLE_COACH">
-      <ObjectId>23</ObjectId>
+    <table id="168" parent="4" name="COACH_STABLE">
+      <ObjectId>7</ObjectId>
     </table>
-    <column id="172" parent="167" name="ID">
+    <table id="169" parent="4" name="HORSE">
+      <ObjectId>8</ObjectId>
+    </table>
+    <table id="170" parent="4" name="STABLE">
+      <ObjectId>12</ObjectId>
+    </table>
+    <column id="171" parent="167" name="ID">
       <Position>1</Position>
       <DataType>BIGINT|0s</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>null(11)</SequenceIdentity>
+      <SequenceIdentity>null(3)</SequenceIdentity>
     </column>
-    <column id="173" parent="167" name="PERSONAL_ID_NO">
+    <column id="172" parent="167" name="COACH_WORK_NUMBER">
       <Position>2</Position>
-      <DataType>INT|0s</DataType>
+      <DataType>INTEGER|0s</DataType>
     </column>
-    <column id="174" parent="167" name="NAME">
+    <column id="173" parent="167" name="NAME">
       <Position>3</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="175" parent="167" name="COACHWORKNUMBER">
+    <column id="174" parent="167" name="PERSONAL_ID_NO">
       <Position>4</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
-    <column id="176" parent="167" name="OPT_LOCK_VERSION">
+    <column id="175" parent="167" name="OPT_LOCK_VERSION">
       <Position>5</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
-    <index id="177" parent="167" name="PRIMARY_KEY_6E">
-      <ObjectId>19</ObjectId>
-      <NameSurrogate>1</NameSurrogate>
-      <SourceTextLength>60</SourceTextLength>
-      <ColNames>ID</ColNames>
-      <Unique>1</Unique>
-      <AutoCreated>1</AutoCreated>
-    </index>
-    <index id="178" parent="167" name="CONSTRAINT_3D_INDEX_6">
-      <ObjectId>21</ObjectId>
-      <NameSurrogate>1</NameSurrogate>
-      <SourceTextLength>80</SourceTextLength>
-      <ColNames>PERSONAL_ID_NO</ColNames>
-      <Unique>1</Unique>
-      <AutoCreated>1</AutoCreated>
-    </index>
-    <key id="179" parent="167" name="CONSTRAINT_3D">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>PERSONAL_ID_NO</ColNames>
-    </key>
-    <column id="180" parent="168" name="COACHES_ID">
-      <Position>1</Position>
-      <DataType>BIGINT|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="181" parent="168" name="STABLES_ID">
-      <Position>2</Position>
-      <DataType>BIGINT|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <index id="182" parent="168" name="FKC8JTNDU6H13VYDX2E8FO95EGG_INDEX_3">
-      <ObjectId>33</ObjectId>
-      <NameSurrogate>1</NameSurrogate>
-      <SourceTextLength>90</SourceTextLength>
-      <ColNames>COACHES_ID</ColNames>
-      <AutoCreated>1</AutoCreated>
-    </index>
-    <index id="183" parent="168" name="FKHW26FFPNHWG3KPCXQF8G0SMAN_INDEX_3">
-      <ObjectId>31</ObjectId>
-      <NameSurrogate>1</NameSurrogate>
-      <SourceTextLength>90</SourceTextLength>
-      <ColNames>STABLES_ID</ColNames>
-      <AutoCreated>1</AutoCreated>
-    </index>
-    <foreign-key id="184" parent="168" name="FKC8JTNDU6H13VYDX2E8FO95EGG">
-      <ColNames>COACHES_ID</ColNames>
-      <RefTableName>COACH</RefTableName>
-      <RefKeyName>PRIMARY_KEY_6E</RefKeyName>
-      <RefColNames>ID</RefColNames>
-      <OnDelete>restrict</OnDelete>
-      <OnUpdate>restrict</OnUpdate>
-    </foreign-key>
-    <foreign-key id="185" parent="168" name="FKHW26FFPNHWG3KPCXQF8G0SMAN">
-      <ColNames>STABLES_ID</ColNames>
-      <RefTableName>STABLE</RefTableName>
-      <RefKeyName>PRIMARY_KEY_9</RefKeyName>
-      <RefColNames>ID</RefColNames>
-      <OnDelete>restrict</OnDelete>
-      <OnUpdate>restrict</OnUpdate>
-    </foreign-key>
-    <column id="186" parent="169" name="ID">
-      <Position>1</Position>
-      <DataType>BIGINT|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>null(5)</SequenceIdentity>
-    </column>
-    <column id="187" parent="169" name="IDENTITY_NO">
-      <Position>2</Position>
-      <DataType>INT|0s</DataType>
-    </column>
-    <column id="188" parent="169" name="NAME">
-      <Position>3</Position>
-      <DataType>VARCHAR(255)|0s</DataType>
-    </column>
-    <column id="189" parent="169" name="STABLE_ID">
-      <Position>4</Position>
-      <DataType>INT|0s</DataType>
-    </column>
-    <index id="190" parent="169" name="PRIMARY_KEY_4">
-      <ObjectId>11</ObjectId>
+    <index id="176" parent="167" name="PRIMARY_KEY_3">
+      <ObjectId>5</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SourceTextLength>59</SourceTextLength>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
       <AutoCreated>1</AutoCreated>
     </index>
-    <index id="191" parent="169" name="CONSTRAINT_INDEX_4">
-      <ObjectId>13</ObjectId>
-      <NameSurrogate>1</NameSurrogate>
-      <SourceTextLength>74</SourceTextLength>
-      <ColNames>IDENTITY_NO</ColNames>
-      <Unique>1</Unique>
-      <AutoCreated>1</AutoCreated>
-    </index>
-    <index id="192" parent="169" name="CONSTRAINT_INDEX_41">
-      <ObjectId>15</ObjectId>
-      <NameSurrogate>1</NameSurrogate>
-      <SourceTextLength>66</SourceTextLength>
-      <ColNames>STABLE_ID</ColNames>
-      <AutoCreated>1</AutoCreated>
-    </index>
-    <key id="193" parent="169" name="CONSTRAINT_41">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>IDENTITY_NO</ColNames>
-    </key>
-    <foreign-key id="194" parent="169" name="CONSTRAINT_41B">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>STABLE_ID</ColNames>
-      <RefTableName>STABLE</RefTableName>
-      <RefKeyName>PRIMARY_KEY_9</RefKeyName>
-      <RefColNames>ID</RefColNames>
-      <OnDelete>restrict</OnDelete>
-      <OnUpdate>restrict</OnUpdate>
-    </foreign-key>
-    <foreign-key id="195" parent="169" name="FKT0N6X19SOOLU3HJRDCL5MY1PU">
-      <ColNames>STABLE_ID</ColNames>
-      <RefTableName>STABLE</RefTableName>
-      <RefKeyName>PRIMARY_KEY_9</RefKeyName>
-      <RefColNames>ID</RefColNames>
-      <OnDelete>restrict</OnDelete>
-      <OnUpdate>restrict</OnUpdate>
-    </foreign-key>
-    <column id="196" parent="170" name="ID">
+    <column id="177" parent="168" name="COACHES_ID">
       <Position>1</Position>
       <DataType>BIGINT|0s</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>null(6)</SequenceIdentity>
     </column>
-    <column id="197" parent="170" name="ADDRESS">
+    <column id="178" parent="168" name="STABLES_ID">
       <Position>2</Position>
-      <DataType>VARCHAR(255)|0s</DataType>
+      <DataType>BIGINT|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <column id="198" parent="170" name="NAME">
+    <index id="179" parent="168" name="FKC8JTNDU6H13VYDX2E8FO95EGG_INDEX_3">
+      <ObjectId>18</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <SourceTextLength>90</SourceTextLength>
+      <ColNames>COACHES_ID</ColNames>
+      <AutoCreated>1</AutoCreated>
+    </index>
+    <index id="180" parent="168" name="FKHW26FFPNHWG3KPCXQF8G0SMAN_INDEX_3">
+      <ObjectId>16</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <SourceTextLength>90</SourceTextLength>
+      <ColNames>STABLES_ID</ColNames>
+      <AutoCreated>1</AutoCreated>
+    </index>
+    <foreign-key id="181" parent="168" name="FKC8JTNDU6H13VYDX2E8FO95EGG">
+      <ColNames>COACHES_ID</ColNames>
+      <RefTableName>COACH</RefTableName>
+      <RefKeyName>PRIMARY_KEY_3</RefKeyName>
+      <RefColNames>ID</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+    </foreign-key>
+    <foreign-key id="182" parent="168" name="FKHW26FFPNHWG3KPCXQF8G0SMAN">
+      <ColNames>STABLES_ID</ColNames>
+      <RefTableName>STABLE</RefTableName>
+      <RefKeyName>PRIMARY_KEY_9</RefKeyName>
+      <RefColNames>ID</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+    </foreign-key>
+    <column id="183" parent="169" name="ID">
+      <Position>1</Position>
+      <DataType>BIGINT|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null(1)</SequenceIdentity>
+    </column>
+    <column id="184" parent="169" name="IDENTITY_NO">
+      <Position>2</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="185" parent="169" name="NAME">
       <Position>3</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="199" parent="170" name="OPT_LOCK_VERSION">
+    <column id="186" parent="169" name="STABLE_ID">
       <Position>4</Position>
-      <DataType>INT|0s</DataType>
+      <DataType>BIGINT|0s</DataType>
     </column>
-    <index id="200" parent="170" name="PRIMARY_KEY_9">
-      <ObjectId>5</ObjectId>
+    <index id="187" parent="169" name="PRIMARY_KEY_4">
+      <ObjectId>10</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <SourceTextLength>59</SourceTextLength>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+      <AutoCreated>1</AutoCreated>
+    </index>
+    <index id="188" parent="169" name="FKT0N6X19SOOLU3HJRDCL5MY1PU_INDEX_4">
+      <ObjectId>20</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <SourceTextLength>82</SourceTextLength>
+      <ColNames>STABLE_ID</ColNames>
+      <AutoCreated>1</AutoCreated>
+    </index>
+    <foreign-key id="189" parent="169" name="FKT0N6X19SOOLU3HJRDCL5MY1PU">
+      <ColNames>STABLE_ID</ColNames>
+      <RefTableName>STABLE</RefTableName>
+      <RefKeyName>PRIMARY_KEY_9</RefKeyName>
+      <RefColNames>ID</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+    </foreign-key>
+    <column id="190" parent="170" name="ID">
+      <Position>1</Position>
+      <DataType>BIGINT|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null(4)</SequenceIdentity>
+    </column>
+    <column id="191" parent="170" name="ADDRESS">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+    </column>
+    <column id="192" parent="170" name="NAME">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+    </column>
+    <index id="193" parent="170" name="PRIMARY_KEY_9">
+      <ObjectId>14</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SourceTextLength>60</SourceTextLength>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
       <AutoCreated>1</AutoCreated>
     </index>
-    <index id="201" parent="170" name="CONSTRAINT_INDEX_9">
-      <ObjectId>7</ObjectId>
-      <NameSurrogate>1</NameSurrogate>
-      <SourceTextLength>71</SourceTextLength>
-      <ColNames>ADDRESS</ColNames>
-      <Unique>1</Unique>
-      <AutoCreated>1</AutoCreated>
-    </index>
-    <key id="202" parent="170" name="CONSTRAINT_92">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>ADDRESS</ColNames>
-    </key>
-    <column id="203" parent="171" name="STABLE_ID">
-      <Position>1</Position>
-      <DataType>INT|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="204" parent="171" name="COACH_ID">
-      <Position>2</Position>
-      <DataType>INT|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <index id="205" parent="171" name="PRIMARY_KEY_5">
-      <ObjectId>24</ObjectId>
-      <NameSurrogate>1</NameSurrogate>
-      <SourceTextLength>83</SourceTextLength>
-      <ColNames>STABLE_ID
-COACH_ID</ColNames>
-      <Unique>1</Unique>
-      <AutoCreated>1</AutoCreated>
-    </index>
-    <index id="206" parent="171" name="CONSTRAINT_INDEX_5">
-      <ObjectId>26</ObjectId>
-      <NameSurrogate>1</NameSurrogate>
-      <SourceTextLength>72</SourceTextLength>
-      <ColNames>STABLE_ID</ColNames>
-      <AutoCreated>1</AutoCreated>
-    </index>
-    <index id="207" parent="171" name="CONSTRAINT_INDEX_58">
-      <ObjectId>28</ObjectId>
-      <NameSurrogate>1</NameSurrogate>
-      <SourceTextLength>72</SourceTextLength>
-      <ColNames>COACH_ID</ColNames>
-      <AutoCreated>1</AutoCreated>
-    </index>
-    <foreign-key id="208" parent="171" name="CONSTRAINT_58">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>STABLE_ID</ColNames>
-      <RefTableName>STABLE</RefTableName>
-      <RefKeyName>PRIMARY_KEY_9</RefKeyName>
-      <RefColNames>ID</RefColNames>
-      <OnDelete>restrict</OnDelete>
-      <OnUpdate>restrict</OnUpdate>
-    </foreign-key>
-    <foreign-key id="209" parent="171" name="CONSTRAINT_58C">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>COACH_ID</ColNames>
-      <RefTableName>COACH</RefTableName>
-      <RefKeyName>PRIMARY_KEY_6E</RefKeyName>
-      <RefColNames>ID</RefColNames>
-      <OnDelete>restrict</OnDelete>
-      <OnUpdate>restrict</OnUpdate>
-    </foreign-key>
   </database-model>
 </dataSource>

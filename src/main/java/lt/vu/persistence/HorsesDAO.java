@@ -23,7 +23,7 @@ public class HorsesDAO {
         this.em.persist(horse);
     }
 
-    public Horse findOne(Integer id){
+    public Horse findOne(Long id){
 
         return em.find(Horse.class, id);
     }

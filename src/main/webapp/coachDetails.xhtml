@@ -7,7 +7,7 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:a="http://java.sun.com/jsf/composite">
 <h:head/>
 <h:body>
-    <h2>#{coachDetails.coach.name} #{coachDetails.coach.personalIdNo}</h2>
+    <h2>#{coachDetails.coach.name}, personal Id No = #{coachDetails.coach.personalIdNo}</h2>
 
     <h:form>
         <h:outputText value="Change coach name: "/>
@@ -15,8 +15,11 @@
         <h:commandButton value="Update" action="#{updateCoachDetails.updateCoach}">
             <f:param name="coachId" value="#{updateCoachDetails.coach.id}" />
         </h:commandButton>
+        <br></br>
         <h:outputText value="Value was already modified by other user. If you want to override it - try again" rendered="#{param['error'] == 'optimistic-lock-exception'}" />
     </h:form>
+
+    <h4>Coach name version: #{coachDetails.coach.version}</h4>
 
     <h3>Stables:</h3>
     <ol>
@@ -28,7 +31,7 @@
         <h:selectOneMenu value = "#{coachDetails.stableToAssignId}">
             <f:selectItems value="#{coachDetails.availableStables}" var="stable" itemValue="#{stable.id}" itemLabel="#{stable.name}" />
         </h:selectOneMenu>
-        <h:commandButton value="Add stable" action="#{coachDetails.assignToNewStable}">
+        <h:commandButton style="#{coachDetails.availableStables.size() == 0 ? 'color:red' : 'color:blue'}" value="Add stable" action="#{coachDetails.assignToNewStable}">
             <f:param name="coachId" value="#{coachDetails.coach.id}"/>
         </h:commandButton>
     </h:form>
@@ -43,5 +46,6 @@
     </h:form>
 
     <h:link outcome="index" value="Back to main page"/>
+
 </h:body>
 </html>

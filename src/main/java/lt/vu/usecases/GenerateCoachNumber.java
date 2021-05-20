@@ -1,5 +1,7 @@
 package lt.vu.usecases;
 
+import lombok.Getter;
+import lombok.Setter;
 import lt.vu.interceptors.LoggedInvocation;
 import lt.vu.services.CoachNumberGenerator;
 
@@ -18,6 +20,9 @@ import java.util.concurrent.ExecutionException;
 public class GenerateCoachNumber implements Serializable {
     @Inject
     CoachNumberGenerator coachNumberGenerator;
+
+    @Setter @Getter
+    private Integer generatedNum;
 
     private CompletableFuture<Integer> coachNumberGenerationTask = null;
 
@@ -40,6 +45,7 @@ public class GenerateCoachNumber implements Serializable {
         } else if (isGenerationRunning()) {
             return "Coach work number generation status is in progress..";
         }
-        return "Suggested coach work number: " + coachNumberGenerationTask.get();
+        generatedNum = coachNumberGenerationTask.get();
+        return "Suggested coach work number: " + generatedNum;
     }
 }
